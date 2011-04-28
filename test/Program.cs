@@ -17,10 +17,20 @@ namespace test
 			Console.WriteLine("sending email...");
 			EmailSMSSender.Sender.SendEmail("oferfrid@gmail.com","test","old param test \n" + DateTime.Now.ToString());
 			
-			// TODO: Implement Functionality Here
 			
-			Console.Write("Email send \nPress any key to continue . . . ");
+			Console.Write("Email send \nPress any key to continue . . . \n");
 			Console.ReadKey(true);
+			
+			Console.WriteLine("sending ICQ...");
+			EmailSMSSender.Sender.SendICQ("389444118"," test " + DateTime.Now.ToString());
+				Console.Write("ICQ send \nPress any key to continue . . . \n");
+			Console.ReadKey(true);
+			
+			Console.WriteLine("sending ICQ...");
+			EmailSMSSender.Sender.SendSMS(@"+972544526391"," test " + DateTime.Now.ToString());
+				Console.Write("ICQ send \nPress any key to continue . . . \n");
+			Console.ReadKey(true);
+			
 		}
 	}
 }

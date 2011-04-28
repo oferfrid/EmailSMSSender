@@ -49,12 +49,7 @@ namespace EmailSMSSender
 			SMPclint.Port = 587;
 			SMPclint.Send(msg);
 		}
-		public static void SendSMS(string ToPhone,
-		                           string Body)
-		{
-			string ToEmail =ToPhone + ConfigurationManager.AppSettings["SMSProviderEmailServer"];
-			SendEmail(ToEmail,string.Empty,Body);
-		}
+		
 		public static void SendEmail(string ToEmail,
 		                             string Subject,
 		                             string Body)
@@ -62,6 +57,29 @@ namespace EmailSMSSender
 			string FromGmailEmail = ConfigurationManager.AppSettings["GmailSenderUser"];
 			string FromEmailPassword = ConfigurationManager.AppSettings["GmailSenderPassword"];
 			SendEmail(FromGmailEmail,FromEmailPassword,ToEmail,Subject,Body);
+		}
+		
+		public static void SendSMS(string ToPhone, string Body)
+		{
+			string ICQSenderUid = System.Configuration.ConfigurationManager.AppSettings["ICQSenderUid"];
+			string ICQSenderPassword= System.Configuration.ConfigurationManager.AppSettings["ICQSenderPassword"];
+			
+			
+			SMSManager SM =new SMSManager(ICQSenderUid,ICQSenderPassword);
+			SM.SendSMSMessage(ToPhone,Body);
+			
+		}
+		public static void SendICQ(string ToUid, string Body)
+		{
+			string ICQSenderUid = System.Configuration.ConfigurationManager.AppSettings["ICQSenderUid"];
+			string ICQSenderPassword= System.Configuration.ConfigurationManager.AppSettings["ICQSenderPassword"];
+			
+			
+			SMSManager SM =new SMSManager(ICQSenderUid,ICQSenderPassword);
+			SM.SendICQMessage(	ToUid,Body);
+			SM = null;
+			
+			
 		}
 	}
 }

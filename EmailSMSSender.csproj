@@ -1,4 +1,5 @@
-﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <ProjectGuid>{77228BF1-700B-4F94-B687-33FFB9001B62}</ProjectGuid>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -36,5 +37,12 @@
   <ItemGroup>
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="Sender.cs" />
+    <Compile Include="SMSManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="OscarLib\Core.csproj">
+      <Project>{86573648-6F6B-4C18-84D1-2FD904EA31BC}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>
