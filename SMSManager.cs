@@ -30,7 +30,7 @@ namespace EmailSMSSender
 		public SMSManager(string name, string pw)
 		{
 			sess = new Session(name, pw);
-			sess.InitializeLogger(Environment.CurrentDirectory);
+			//sess.InitializeLogger(Environment.CurrentDirectory);
 
 			sess.ClientCapabilities = Capabilities.Chat | Capabilities.SendFiles | Capabilities.OscarLib |
 				Capabilities.DirectIM;
