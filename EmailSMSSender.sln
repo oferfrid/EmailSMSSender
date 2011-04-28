@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+# SharpDevelop 4.0.0.7070
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailSMSSender", "EmailSMSSender.csproj", "{77228BF1-700B-4F94-B687-33FFB9001B62}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test", "test\test.csproj", "{640435A0-3849-439D-935E-350B76FF0C6C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{77228BF1-700B-4F94-B687-33FFB9001B62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77228BF1-700B-4F94-B687-33FFB9001B62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77228BF1-700B-4F94-B687-33FFB9001B62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77228BF1-700B-4F94-B687-33FFB9001B62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{640435A0-3849-439D-935E-350B76FF0C6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{640435A0-3849-439D-935E-350B76FF0C6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{640435A0-3849-439D-935E-350B76FF0C6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{640435A0-3849-439D-935E-350B76FF0C6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+EndGlobal
