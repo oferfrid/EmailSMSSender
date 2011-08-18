@@ -40,7 +40,7 @@
     <Compile Include="SMSManager.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="OscarLib\Core.csproj">
+    <ProjectReference Include="Core\Core.csproj">
       <Project>{86573648-6F6B-4C18-84D1-2FD904EA31BC}</Project>
       <Name>Core</Name>
     </ProjectReference>

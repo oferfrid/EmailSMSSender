@@ -19,7 +19,7 @@ namespace EmailSMSSender
 	public class SMSManager
 	{
 
-		private ISession sess;
+		private Session sess;
 		private string number=string.Empty;
 		private string message=string.Empty;
 		private string Uid=string.Empty;
@@ -56,14 +56,14 @@ namespace EmailSMSSender
 
 		private void sess_MessageReceived(object sender, MessageReceivedEventArgs e)
 		{
-			//Console.WriteLine("ICBM message received from {0}: {1}", e.Message.ScreenName, e.Message.Message);
+			Console.WriteLine("ICBM message received from {0}: {1}", e.Message.ScreenName, e.Message.Message);
 		}
 
 
 		
 
 		//*************Do Not Delete****************
-		private void sess_ContactListFinished(ISession sess, DateTime dt)
+		private void sess_ContactListFinished(Session sess, DateTime dt)
 		{
 			sess.ActivateBuddyList();
 		}
@@ -72,7 +72,7 @@ namespace EmailSMSSender
 
 		private void Login()
 		{
-			sess.Logon("login.oscar.aol.com", 5190);
+			sess.Logon("login.icq.com", 5190,false);
 			
 		}
 		private void LogOf()
@@ -82,7 +82,7 @@ namespace EmailSMSSender
 		}
 
 
-		private void sess_LoginCompleted(ISession sess)
+		private void sess_LoginCompleted(Session sess)
 		{
 			//Console.WriteLine("Login complete");
 			if (number!=string.Empty)
@@ -99,7 +99,7 @@ namespace EmailSMSSender
 			LoginRetrys = 3;
 		}
 
-		private void sess_LoginFailed(ISession sess, LoginErrorCode reason)
+		private void sess_LoginFailed(Session sess, LoginErrorCode reason)
 		{
 			if (LoginRetrys >0)
 			{
@@ -109,40 +109,27 @@ namespace EmailSMSSender
 			else
 			{
 				LoginRetrys = 3;
-				throw new Exception("ICQ LoginFailed reason: " + reason.ToString());
+				Console.WriteLine("LoginFailed: " + reason);
 			}
 			
-			//Console.WriteLine("LoginFailed: " + reason);
+			
 		}
 
-		private void sess_ErrorMessage(ISession sess, ServerErrorCode error)
+		private void sess_ErrorMessage(Session sess, ServerErrorCode error)
 		{
-			//Console.WriteLine("Error: " + error);
+			Console.WriteLine("Error: " + error);
 		}
 
-		private void sess_WarningMessage(ISession sess, ServerErrorCode error)
+		private void sess_WarningMessage(Session sess, ServerErrorCode error)
 		{
-			//Console.WriteLine("Warning: " + error);
+			Console.WriteLine("Warning: " + error);
 		}
 
-		private void sess_StatusUpdate(ISession sess, string message)
+		private void sess_StatusUpdate(Session sess, string message)
 		{
-			//Console.WriteLine("Status: " + message);
+			Console.WriteLine("Status: " + message);
 		}
-//		private void BuddyListDump()
-//		{
-//			foreach (ContactListGroup clg in groups)
-//			{
-//				Console.WriteLine(String.Format("{0}({1})", clg.group.Name, clg.group.ID));
-//				if (clg.buddies != null)
-//				{
-//					foreach (SSIBuddy buddy in clg.buddies)
-//					{
-//						Console.WriteLine(String.Format("  {0}({1})", buddy.Name, buddy.ID));
-//					}
-//				}
-//			}
-//		}
+//		
 		
 		/// <summary>
 		/// sends an sms using ICQ getway
